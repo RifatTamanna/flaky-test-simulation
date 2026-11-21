@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "n_tests": 300,
+    "n_runs": 120,
+    "n_exec": 36000,
+    "n_fail": 1296,
+    "n_flaky_fail": 1084,
+    "n_genuine_fail": 212,
+    "n_flaky_tests": 66,
+    "train_fail": 831,
+    "test_fail": 465,
+    "test_flaky": 331,
+    "test_genuine": 134
+  },
+  "causes": {
+    "timing_async": {
+      "tests": 17,
+      "failures": 272
+    },
+    "test_data_state": {
+      "tests": 13,
+      "failures": 227
+    },
+    "order_dependency": {
+      "tests": 10,
+      "failures": 225
+    },
+    "environment": {
+      "tests": 8,
+      "failures": 86
+    },
+    "network_third_party": {
+      "tests": 10,
+      "failures": 148
+    },
+    "locator_fragility": {
+      "tests": 7,
+      "failures": 98
+    },
+    "concurrency": {
+      "tests": 1,
+      "failures": 28
+    }
+  },
+  "models": {
+    "Logistic regression": {
+      "precision": 0.8803191489361702,
+      "recall": 1.0,
+      "f1": 0.9363507779349364,
+      "auc": 0.962280741308563
+    },
+    "Gradient-boosted trees": {
+      "precision": 0.9118457300275482,
+      "recall": 1.0,
+      "f1": 0.9538904899135446,
+      "auc": 0.9299724940253417
+    }
+  },
+  "blind_retry": {
+    "precision": 0.9792899408284024,
+    "recall": 1.0,
+    "f1": 0.9895366218236173
+  },
+  "top_features": [
+    [
+      "dur_cv",
+      0.921
+    ],
+    [
+      "hist_flips",
+      0.061
+    ],
+    [
+      "dur_ratio",
+      0.009
+    ],
+    [
+      "rn_ci-c",
+      0.004
+    ],
+    [
+      "hist_retry_pass",
+      0.002
+    ],
+    [
+      "hist_fail_rate",
+      0.002
+    ]
+  ],
+  "triage": {
+    "total_test_failures": 465,
+    "predicted_flaky": 363,
+    "predicted_genuine": 102,
+    "genuine_mislabeled_flaky": 32,
+    "genuine_total": 134
+  },
+  "scenario": {
+    "flaky_fail_before": 1084,
+    "flaky_fail_after": 361.2,
+    "runs_with_flaky_before": 120,
+    "runs_with_flaky_after_mean": 114.73,
+    "runs_with_flaky_after_sd": 2.0969263220246916,
+    "assumed_fix": {
+      "timing_async": 0.8,
+      "test_data_state": 0.75,
+      "order_dependency": 0.7,
+      "environment": 0.3,
+      "network_third_party": 0.4,
+      "locator_fragility": 0.8,
+      "concurrency": 0.5
+    }
+  }
+}
